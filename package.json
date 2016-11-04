@@ -1,10 +1,9 @@
 {
   "name": "hearsay2require",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "hearsay_require_js to requirejs.config",
   "main": "index.js",
   "dependencies": {
-    "fs": "0.0.1-security",
     "js-yaml": "^3.6.1"
   },
   "devDependencies": {},
@@ -15,6 +14,6 @@
     "h2r": "./index.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "author": "heymexa (heymexa@gmail.com)",
+  "license": "MIT"
 }
