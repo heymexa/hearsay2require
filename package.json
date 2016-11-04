@@ -1,0 +1,17 @@
+{
+  "name": "hearsay2require",
+  "version": "1.0.0",
+  "description": "hearsay_require_js to requirejs.config",
+  "main": "index.js",
+  "dependencies": {
+    "fs": "0.0.1-security",
+    "js-yaml": "^3.6.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
