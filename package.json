@@ -1,6 +1,6 @@
 {
   "name": "hearsay2require",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "hearsay_require_js to requirejs.config",
   "main": "index.js",
   "dependencies": {

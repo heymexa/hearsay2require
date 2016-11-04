@@ -24,7 +24,7 @@ const getRequireJs = (hearsay) => {
 
 const saveRequireJsConfig = (hearsay, commonJs) => {
     const fileContent = requireJsTemplate.replace('%config%', JSON.stringify(commonJs));
-    fs.writeFile(hearsay.hearsay_require_js.paths.common_js_path, fileContent, (err) => {
+    fs.writeFile(hearsay.hearsay_require_js.paths.common_js_path + '/common.js', fileContent, (err) => {
         if (err) throw err;
     });
 };
