@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 'use strict';
 
 const requireJsConfig = {
@@ -37,4 +39,4 @@ const convert = () => {
     }
 };
 
-module.exports = convert;
+convert();

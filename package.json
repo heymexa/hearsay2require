@@ -1,6 +1,6 @@
 {
   "name": "hearsay2require",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "hearsay_require_js to requirejs.config",
   "main": "index.js",
   "dependencies": {
@@ -10,6 +10,9 @@
   "devDependencies": {},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "h2r": "./index.js"
   },
   "keywords": [],
   "author": "",
