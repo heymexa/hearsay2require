@@ -2,12 +2,9 @@
 
 'use strict';
 
-const requireJsConfig = {
-    waitSeconds: 300
-};
-
 const yaml = require('js-yaml');
 const fs = require('fs');
+const requireJsConfig = require('./requirejs.config');
 
 const hearsayConfigFile = process.argv[2];
 let requireJsTemplate = 'requirejs.config(%config%);';
@@ -24,7 +21,7 @@ const getRequireJs = (hearsay) => {
 
 const saveRequireJsConfig = (hearsay, commonJs) => {
     const fileContent = requireJsTemplate.replace('%config%', JSON.stringify(commonJs));
-    fs.writeFile(hearsay.hearsay_require_js.paths.common_js_path + '/common.js', fileContent, (err) => {
+    fs.writeFile(hearsay.hearsay_require_js.paths.common_js_path + '.js', fileContent, (err) => {
         if (err) throw err;
     });
 };
