@@ -4,24 +4,19 @@
 
 const yaml = require('js-yaml');
 const fs = require('fs');
-const requireJsConfig = require('./requirejs.config');
 
+const KERNEL_ROOT_DIR = 'app/';
+const REQUIRE_JS_TEMPLATE = 'requirejs.config(%config%);';
 const hearsayConfigFile = process.argv[2];
-let requireJsTemplate = 'requirejs.config(%config%);';
 
 const getRequireJs = (hearsay) => {
-    const options = hearsay.hearsay_require_js.optimizer.options;
-    for (let option in options) {
-        if (options.hasOwnProperty(option)) {
-            requireJsConfig[option] = options[option];
-        }
-    }
-    return requireJsConfig;
+    return Object.assign({}, hearsay.hearsay_require_js.optimizer.options);
 };
 
 const saveRequireJsConfig = (hearsay, commonJs) => {
-    const fileContent = requireJsTemplate.replace('%config%', JSON.stringify(commonJs));
-    fs.writeFile(hearsay.hearsay_require_js.paths.common_js_path + '.js', fileContent, (err) => {
+    const fileContent = REQUIRE_JS_TEMPLATE.replace('%config%', JSON.stringify(commonJs));
+    const commonJsPath = hearsay.hearsay_require_js.paths.common_js_path.replace('%kernel.root_dir%/', KERNEL_ROOT_DIR);
+    fs.writeFile(commonJsPath + '.js', fileContent, (err) => {
         if (err) throw err;
     });
 };
